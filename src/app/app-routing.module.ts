@@ -1,17 +1,22 @@
 import { NgModule } from "@angular/core";
-import { Route, RouterModule, Routes } from "@angular/router";
-import { JoinGamePage } from "./pages/join-game/join-game.page";
+import { RouterModule, Routes } from "@angular/router";
+import { ProfilePage } from "./pages/profile/profile.page";
 import { LoginPage } from "./pages/login/login.page";
 
 const routes: Routes = [
     {
         path: "",
+        pathMatch: "full",
+        redirectTo: "/login"
+    },
+    {
+        path: "login",
         component: LoginPage
     },
     {
-        path: "",
-        component: JoinGamePage
-    }
+        path: "profile",
+        component: ProfilePage
+    },
 ]
 
 @NgModule({

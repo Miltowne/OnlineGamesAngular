@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { LoginService } from 'src/app/services/login.service';
+import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/models/user.model';
 
 @Component({
   selector: 'app-login-form',
@@ -8,9 +11,26 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginFormComponent implements OnInit {
 
-  constructor() { }
+  @Output() login: EventEmitter<void> = new EventEmitter();
+
+  constructor(
+    private readonly loginService: LoginService,
+    private readonly userService: UserService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  loginSubmit(loginFom: NgForm): void{
+    const {username} = loginFom.value
+
+    this.loginService.login(username)
+    .subscribe({
+      next: (user: User) => {
+        this.userService.user = user
+        this.login.emit();
+      }
+    })
   }
 
 }

@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  userAPI: 'https://heroku-tim-api.herokuapp.com/users',
+  apiKey: "wJVkksX6c0CwVTEXeM2MAA=="
 };
 
 /*
