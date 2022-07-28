@@ -1,11 +1,6 @@
-interface GameSession {
+export interface GameSession {
     sessId: string,
-    players: User[],
-    state: string[9] 
+    players: string[],
+    state: string,       // X X O E X O O O O
+    turn: string
 }
-
-/*
-    ['X', 'E', 'E',
-     'X', 'O', 'E',
-     'O', 'E', 'E']
-*/
