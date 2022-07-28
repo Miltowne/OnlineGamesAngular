@@ -8,13 +8,17 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { ThreeInRowComponent } from './components/three-in-row/three-in-row.component';
+import { ThreeInRowPage } from './pages/three-in-row/three-in-row.page';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPage,
     ProfilePage,
-    LoginFormComponent
+    LoginFormComponent,
+    ThreeInRowComponent,
+    ThreeInRowPage
   ],
   imports: [
     BrowserModule,
