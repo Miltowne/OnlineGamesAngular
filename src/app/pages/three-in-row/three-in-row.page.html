@@ -1,1 +1,10 @@
-<app-three-in-row>
+<ng-template *ngIf="inSession; then renderSession else renderGameMenu"></ng-template>
+
+<ng-template #renderSession>
+    <p>in session!</p>
+</ng-template>
+
+
+<ng-template #renderGameMenu>    
+    <app-three-in-row-menu></app-three-in-row-menu>
+</ng-template>

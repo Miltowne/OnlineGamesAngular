@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { ProfilePage } from "./pages/profile/profile.page";
 import { LoginPage } from "./pages/login/login.page";
+import { ThreeInRowPage } from "./pages/three-in-row/three-in-row.page";
 
 const routes: Routes = [
     {
@@ -16,6 +17,10 @@ const routes: Routes = [
     {
         path: "profile",
         component: ProfilePage
+    },
+    {
+        path: "threeInRow",
+        component: ThreeInRowPage
     },
 ]
 

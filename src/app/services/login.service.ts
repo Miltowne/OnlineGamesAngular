@@ -33,13 +33,13 @@ export class LoginService {
       )
   }
 
-  
   public checkUserName(username: string): Observable<User | undefined>{
     return this.http.get<User[]>(`${userAPI}?username=${username}`)
     .pipe(
       map((response: User[])=> response.pop())
     )
   }
+
   private createUser(username: string): Observable<User>{
     const user = {
       username,

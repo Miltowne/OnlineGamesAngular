@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { ThreeInRowComponent } from './components/three-in-row/three-in-row.component';
 import { ThreeInRowPage } from './pages/three-in-row/three-in-row.page';
+import { ThreeInRowMenuComponent } from './components/three-in-row-menu/three-in-row-menu.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ThreeInRowPage } from './pages/three-in-row/three-in-row.page';
     ProfilePage,
     LoginFormComponent,
     ThreeInRowComponent,
-    ThreeInRowPage
+    ThreeInRowPage,
+    ThreeInRowMenuComponent
   ],
   imports: [
     BrowserModule,

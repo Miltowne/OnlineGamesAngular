@@ -1,3 +1,4 @@
 export enum StorageKeys{
-    User = "player-user"
+    User = "player-user",
+    TIRSession = "tir-session"
 }

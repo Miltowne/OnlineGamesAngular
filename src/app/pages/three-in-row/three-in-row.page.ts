@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ThreeInRowService } from 'src/app/services/three-in-row.service';
 
 @Component({
   selector: 'app-three-in-row',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThreeInRowPage implements OnInit {
 
-  constructor() { }
+  get inSession(): boolean {
+    return this.service.inSession
+  }
+
+  constructor(private readonly service: ThreeInRowService) { }
 
   ngOnInit(): void {
+    this.service.getSessions()
   }
 
 }

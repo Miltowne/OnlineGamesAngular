@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
 
+  tirAPI: 'https://sheetdb.io/api/v1/sq53tccyivmcx',
   userAPI: 'https://heroku-tim-api.herokuapp.com/users',
   apiKey: "wJVkksX6c0CwVTEXeM2MAA=="
 };
