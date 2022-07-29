@@ -1,0 +1,13 @@
+.cell {
+    width: 94px;
+    height: 94px;
+    background-color: lightgray;
+    border-style: groove;
+    border-color: whitesmoke;
+}
+
+.cell h1 {
+    width: 100%;
+    padding-top: .2em;
+    text-align: center;
+}

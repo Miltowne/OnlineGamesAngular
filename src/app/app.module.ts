@@ -12,6 +12,8 @@ import { ThreeInRowGamePage } from './pages/three-in-row-game/three-in-row-game.
 import { ThreeInRowMenuPage } from './pages/three-in-row-menu/three-in-row-menu.page';
 import { SessionListItemComponent } from './components/session-list-item/session-list-item.component';
 import { SessionListComponent } from './components/session-list/session-list.component';
+import { ThreeInRowSessionDisplayComponent } from './components/three-in-row-session-display/three-in-row-session-display.component';
+import { ThreeInRowSessionDisplayCellComponent } from './components/three-in-row-session-display-cell/three-in-row-session-display-cell.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { SessionListComponent } from './components/session-list/session-list.com
     ThreeInRowMenuPage,
     ThreeInRowGamePage,
     SessionListItemComponent,
-    SessionListComponent
+    SessionListComponent,
+    ThreeInRowSessionDisplayComponent,
+    ThreeInRowSessionDisplayCellComponent
   ],
   imports: [
     BrowserModule,

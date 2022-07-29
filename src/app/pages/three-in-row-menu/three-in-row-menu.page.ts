@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { ThreeInRowService } from 'src/app/services/three-in-row.service';
 import { UserService } from 'src/app/services/user.service';
-import { ThreeInRowSession } from 'src/models/three-in-row.game.model';
+import { TIRGameSession } from 'src/models/three-in-row-game-session.model';
 import { User } from 'src/models/user.model';
 
 @Component({
@@ -11,7 +11,7 @@ import { User } from 'src/models/user.model';
 })
 export class ThreeInRowMenuPage {
 
-  public session?: ThreeInRowSession
+  public session?: TIRGameSession
 
   get user(): User {
     if (!this.userService.user)
@@ -20,7 +20,7 @@ export class ThreeInRowMenuPage {
     return this.userService.user
   }
 
-  get gameSessions(): ThreeInRowSession [] {
+  get gameSessions(): TIRGameSession [] {
     if (!this.userService.user)
       throw new Error("There must be a user!")
 

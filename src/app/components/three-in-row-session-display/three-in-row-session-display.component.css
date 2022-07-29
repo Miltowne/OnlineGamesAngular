@@ -1,0 +1,7 @@
+.sessionDisplay {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    gap: 10px 10px;
+    margin: auto;
+    width: fit-content;
+}

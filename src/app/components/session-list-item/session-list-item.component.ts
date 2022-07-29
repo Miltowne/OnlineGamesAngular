@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
-import { ThreeInRowSession } from 'src/models/three-in-row.game.model';
+import { TIRGameSession } from 'src/models/three-in-row-game-session.model';
 import { User } from 'src/models/user.model';
 
 @Component({
@@ -28,7 +28,7 @@ export class SessionListItemComponent implements OnInit {
     this.router.navigateByUrl(`threeInRowGame?${session}`)
   }
 
-  @Input() session?: ThreeInRowSession
+  @Input() session?: TIRGameSession
 
   ngOnInit(): void {
   }

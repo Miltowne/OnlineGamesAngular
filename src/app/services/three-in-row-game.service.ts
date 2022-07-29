@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { ThreeInRowSession } from 'src/models/three-in-row.game.model';
+import { TIRGameSession } from 'src/models/three-in-row-game-session.model';
 import { StorageKeys } from '../enums/storage-keys.enum';
 import { StorageUtil } from '../utils/storage.utils';
 
@@ -13,16 +13,16 @@ export class ThreeInRowGameService {
     private readonly router: Router
   ) { }
 
-  private _session?: ThreeInRowSession
+  private _session?: TIRGameSession
 
-  set session(sess: ThreeInRowSession){
-      StorageUtil.storageSave<ThreeInRowSession>(StorageKeys.TIRSession, sess)
+  set session(sess: TIRGameSession){
+      StorageUtil.storageSave<TIRGameSession>(StorageKeys.TIRSession, sess)
     this._session = sess
   }
 
-  get session(): ThreeInRowSession{
+  get session(): TIRGameSession{
     if(!this._session){
-      let sess = StorageUtil.storageRead<ThreeInRowSession>(StorageKeys.TIRSession)
+      let sess = StorageUtil.storageRead<TIRGameSession>(StorageKeys.TIRSession)
       if(sess){
         this._session = sess
       }

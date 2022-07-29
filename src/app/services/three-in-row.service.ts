@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { ThreeInRowSession } from 'src/models/three-in-row.game.model';
+import { TIRGameSession } from 'src/models/three-in-row-game-session.model';
 
 const apiTIR = environment.tirAPI
 
@@ -9,10 +9,10 @@ const apiTIR = environment.tirAPI
   providedIn: 'root'
 })
 export class ThreeInRowService {
-  private _sessions: ThreeInRowSession[] = []
-  private _session?: ThreeInRowSession 
+  private _sessions: TIRGameSession[] = []
+  private _session?: TIRGameSession 
 
-  get sessions(): ThreeInRowSession[] {
+  get sessions(): TIRGameSession[] {
     return this._sessions
   }
 
@@ -20,7 +20,7 @@ export class ThreeInRowService {
     return !!this._session 
   }
 
-  getPlayerSessions(playerName: string) : ThreeInRowSession[] {
+  getPlayerSessions(playerName: string) : TIRGameSession[] {
     return this._sessions.filter((session) => {
       return session.players.includes(playerName)
     })
@@ -33,17 +33,18 @@ export class ThreeInRowService {
       .subscribe({
         next: (sessions: any) => {
           const allSessions = [...sessions].map((session) => {  
-            const state = session.state.split(" ")  
+            
+            /*const state = session.state.split(" ")  
             const stateArr = [] 
 
             for (let i = 0; i < state.length; i += 3) {
               stateArr.push(state.slice(i, i + 3))
             }
-
+            */
             return {
               sessId: session.session,
               players: session.players.split(" "),
-              state: stateArr,
+              state: session.state.split(" "),
               turn: session.turn
             }
           })
