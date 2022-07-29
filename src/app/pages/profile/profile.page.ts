@@ -6,15 +6,11 @@ import { Router } from '@angular/router';
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.css']
 })
-export class ProfilePage implements OnInit {
+export class ProfilePage {
 
   constructor(private readonly router: Router) { }
 
   public playThreeInRow(): void {
-    this.router.navigateByUrl("/threeInRow")
+    this.router.navigateByUrl("/threeInRowMenu")
   }
-
-  ngOnInit(): void {
-  }
-
 }
