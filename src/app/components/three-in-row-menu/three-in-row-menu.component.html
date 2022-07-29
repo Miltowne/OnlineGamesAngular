@@ -1,1 +1,7 @@
-<p>three-in-row-menu works!</p>
+
+<ul>
+    <li *ngFor="let session of sessions">
+        {{session.sessId}}
+        {{session.turn === user.username ? "It's your turn!" : "Waiting for opponent..." }}
+    </li>
+</ul>

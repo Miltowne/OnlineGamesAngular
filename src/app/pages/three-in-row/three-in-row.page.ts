@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ThreeInRowService } from 'src/app/services/three-in-row.service';
+import { UserService } from 'src/app/services/user.service';
+import { ThreeInRowSession } from 'src/models/three-in-row.game.model';
 
 @Component({
   selector: 'app-three-in-row',
@@ -12,10 +14,17 @@ export class ThreeInRowPage implements OnInit {
     return this.service.inSession
   }
 
-  constructor(private readonly service: ThreeInRowService) { }
+  get gameSessions(): ThreeInRowSession [] {
+    if (!this.userService.user)
+      throw new Error("There must be a user!")
+
+    return this.service.getPlayerSessions(this.userService.user.username)
+  }
+
+  constructor(private readonly service: ThreeInRowService, private readonly userService: UserService) { }
 
   ngOnInit(): void {
-    this.service.getSessions()
+    this.service.getAllSessions()
   }
 
 }

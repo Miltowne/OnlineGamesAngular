@@ -11,5 +11,4 @@ export class ThreeInRowComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

@@ -12,19 +12,25 @@ const apiTIR = environment.tirAPI
 })
 export class ThreeInRowService {
   private _sessions: ThreeInRowSession[] = []
-  private _session?: ThreeInRowSession
+  private _session?: ThreeInRowSession 
 
-  public get sessions(): ThreeInRowSession[] {
-    return this.sessions
+  get sessions(): ThreeInRowSession[] {
+    return this._sessions
   }
 
-  public get inSession(): boolean {
-    return this._session !== null
+  get inSession(): boolean {
+    return !!this._session 
+  }
+
+  getPlayerSessions(playerName: string) : ThreeInRowSession[] {
+    return this._sessions.filter((session) => {
+      return session.players.includes(playerName)
+    })
   }
 
   constructor(private http: HttpClient) {}
 
-  public getSessions(): void {
+  public getAllSessions(): void {
     this.http.get(apiTIR)
       .subscribe({
         next: (sessions: any) => {

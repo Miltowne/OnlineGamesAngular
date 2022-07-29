@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
+import { ThreeInRowSession } from 'src/models/three-in-row.game.model';
+import { User } from 'src/models/user.model';
 
 @Component({
   selector: 'app-three-in-row-menu',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThreeInRowMenuComponent implements OnInit {
 
-  constructor() { }
+  @Input() sessions?: ThreeInRowSession[]
+
+  get user(): User {
+    if (!this.userService.user)
+      throw new Error("There must be a user!")
+
+    return this.userService.user 
+  }
+
+  constructor(private readonly userService: UserService) { }
 
   ngOnInit(): void {
+
   }
 
 }
