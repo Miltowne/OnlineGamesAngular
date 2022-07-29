@@ -2,8 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { ThreeInRowSession } from 'src/models/three-in-row.game.model';
-import { StorageKeys } from '../enums/storage-keys.enum';
-import { StorageUtil } from '../utils/storage.utils';
 
 const apiTIR = environment.tirAPI
 
@@ -51,7 +49,6 @@ export class ThreeInRowService {
           })
 
           this._sessions = allSessions
-          StorageUtil.storageSave<ThreeInRowSession[]>(StorageKeys.TIRSession, this._sessions)  
         },
         error: (err: Error) => {
           console.log(err.message)

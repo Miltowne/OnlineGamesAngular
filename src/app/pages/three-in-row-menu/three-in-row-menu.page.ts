@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { ThreeInRowService } from 'src/app/services/three-in-row.service';
 import { UserService } from 'src/app/services/user.service';
 import { ThreeInRowSession } from 'src/models/three-in-row.game.model';
@@ -11,15 +11,13 @@ import { User } from 'src/models/user.model';
 })
 export class ThreeInRowMenuPage {
 
+  public session?: ThreeInRowSession
+
   get user(): User {
     if (!this.userService.user)
       throw new Error("User required")
       
     return this.userService.user
-  }
-
-  get inSession(): boolean {
-    return this.service.inSession
   }
 
   get gameSessions(): ThreeInRowSession [] {
@@ -34,5 +32,4 @@ export class ThreeInRowMenuPage {
   ngOnInit(): void {
     this.service.getAllSessions()
   }
-
 }

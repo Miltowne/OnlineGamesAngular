@@ -1,0 +1,12 @@
+<a [routerLink]="['/threeInRowGame']" [state]="session">
+    <ul>
+        <li>
+            session Id:{{session?.sessId}}
+        </li>
+        <li>
+            {{session?.turn === user.username 
+                ? "Its your turn master..." 
+                : "It's not you turn my master"}}
+        </li>
+    </ul>
+</a>

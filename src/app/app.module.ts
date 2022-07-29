@@ -8,8 +8,10 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { ThreeInRowGamePage } from './pages/three-in-row/three-in-row-game.page';
+import { ThreeInRowGamePage } from './pages/three-in-row-game/three-in-row-game.page';
 import { ThreeInRowMenuPage } from './pages/three-in-row-menu/three-in-row-menu.page';
+import { SessionListItemComponent } from './components/session-list-item/session-list-item.component';
+import { SessionListComponent } from './components/session-list/session-list.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ThreeInRowMenuPage } from './pages/three-in-row-menu/three-in-row-menu.
     ProfilePage,
     LoginFormComponent,
     ThreeInRowMenuPage,
-    ThreeInRowGamePage
+    ThreeInRowGamePage,
+    SessionListItemComponent,
+    SessionListComponent
   ],
   imports: [
     BrowserModule,

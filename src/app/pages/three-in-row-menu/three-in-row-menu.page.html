@@ -1,7 +1,1 @@
-
-<ul>
-    <li *ngFor="let session of gameSessions">
-        {{session.sessId}}
-        {{session.turn === user.username ? "It's your turn!" : "Waiting for opponent..." }}
-    </li>
-</ul>
+<app-session-list [sessions]="gameSessions"></app-session-list>

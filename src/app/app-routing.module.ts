@@ -3,7 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { ProfilePage } from "./pages/profile/profile.page";
 import { LoginPage } from "./pages/login/login.page";
 import { ThreeInRowMenuPage } from "./pages/three-in-row-menu/three-in-row-menu.page";
-import { ThreeInRowGamePage } from "./pages/three-in-row/three-in-row-game.page";
+import { ThreeInRowGamePage } from "./pages/three-in-row-game/three-in-row-game.page";
 
 const routes: Routes = [
     {
