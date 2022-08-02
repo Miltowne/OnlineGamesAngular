@@ -1,6 +1,6 @@
 <div class="sessionDisplay">
     <app-three-in-row-session-display-cell 
-        *ngFor="let cell of session?.state"
-        [char]="cell">
+        *ngFor="let cell of session?.state; let i = index" [attr.data-index]="i"
+        [char]="cell" [i]="i">
     </app-three-in-row-session-display-cell>
 </div>

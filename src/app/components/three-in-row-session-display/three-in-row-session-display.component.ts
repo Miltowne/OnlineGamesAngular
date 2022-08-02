@@ -11,7 +11,7 @@ export class ThreeInRowSessionDisplayComponent {
 
   constructor() { }
 
-  makeMove(row: number, column: number): void {
-
-  }
+  // makeMove(row: number, column: number): void {
+    // moved to three-in-row-display-cell.ts
+  // }
 }
