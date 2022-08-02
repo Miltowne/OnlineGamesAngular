@@ -46,47 +46,33 @@ export class ThreeInRowGameService {
   }
 
   playerMove(index: number): void{
-
-    
     // change session.turn to the other player
     if(this.session.turn === this.session.players[0])
-    {
       this.session.turn = this.session.players[1]
-    }
     else this.session.turn = this.session.players[0]
+    
     // change session.state
-    let playerCharacter = ""
-    let newPlayer = ""
-    if(this._session?.players[0] === this.userService.user?.username){
-      playerCharacter = "X"
-      newPlayer = this._session?.players[1]!
-      
-    }
-    else{
-      playerCharacter = "O";
-      newPlayer = this._session?.players[0]!
-    } 
+    let playerCharacter = (this._session?.players[0] === this.userService.user?.username) ? "X" : "O" 
     
     const sessionState = this._session!.state
     sessionState[index] = playerCharacter
-    // if(this._session?.turn != this.userService.user?.username)return
-    // update sessionStorage
+
     const session = {
       ...this.session,
       state: sessionState
     }
-    console.log("hej");
     
     this.session = session
-    // this._session?.state = newMove
-    console.log(sessionState, newPlayer);
     
-    this.http.patch(`${tirAPI}/search?session=${this._session!.sessId}`, {
-      "data": {"state": sessionState, "turn": newPlayer}
-   }).subscribe((data)=>console.log(data)
-   );
-    console.log(tirAPI, session, );
-    
+    this.http.put(`${tirAPI}/session/${session.sessId}`, {
+      headers,
+      data: {
+        session: session.sessId,
+        players: session.players.reduce((prev, curr) => prev + " " + curr),
+        state: session.state.reduce((prev, curr) => prev + " " + curr),
+        turn: session.turn
+      }
+    }).subscribe()
   }
 
 }
